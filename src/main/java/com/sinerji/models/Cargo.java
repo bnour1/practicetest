@@ -5,7 +5,6 @@ public class Cargo {
     double salario;
     double reajuste;
     double beneficioDecimal;
-    double salarioBruto;
 
 
     public Cargo(String nome, double salario, double reajuste, double beneficioDecimal) {
@@ -13,7 +12,6 @@ public class Cargo {
         this.salario = salario;
         this.reajuste = reajuste;
         this.beneficioDecimal = beneficioDecimal;
-        this.salarioBruto = salario + (salario * beneficioDecimal);
     }
 
 
@@ -36,9 +34,6 @@ public class Cargo {
         return this.beneficioDecimal;
     }
 
-    public double getSalarioBruto() {
-        return this.salarioBruto;
-    }
 
     
 

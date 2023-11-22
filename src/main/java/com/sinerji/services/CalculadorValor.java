@@ -5,7 +5,7 @@ import java.util.List;
 import com.sinerji.models.Funcionario;
 import com.sinerji.services.strategies.interfaces.Calculadora;
 
-public class CalculadoraFolha {
+public class CalculadorValor {
     private Calculadora strategy;
 
     public void setCalculadoraStrategy(Calculadora calculadoraStrategy) {
