@@ -21,18 +21,32 @@ public class AppTest {
         vendedor = new Cargo("Vendedor", 12000.00, 1800.00, 0.3);
         gerente = new Cargo("Gerente", 20000.00, 3000.00, 0);
         this.funcionarios = new ArrayList<Funcionario>();
+        this.funcionarios.add(new Funcionario("Jorge Carvalho", secretario, "01/2018"));
+        this.funcionarios.add(new Funcionario("Maria Souza", secretario, "12/2015"));
+        this.funcionarios.add(new Funcionario("Ana Silva", vendedor, "12/2021"));
+        this.funcionarios.add(new Funcionario("João Mendes ", vendedor, "12/2021"));
+        this.funcionarios.add(new Funcionario("Juliana Alves", gerente, "07/2017"));
+        this.funcionarios.add(new Funcionario("Bento Albino", gerente, "03/2014"));
     }
 
     @Test
     public void calcularFolhaTotalTest() {
         double expected = 44000.00;
-        Funcionario f1 = new Funcionario("João", secretario, "09/2003");
-        Funcionario f2 = new Funcionario("Maria", vendedor, "09/2003");
-        Funcionario f3 = new Funcionario("Pedro", gerente, "09/2003");
-        this.funcionarios.add(f1);
-        this.funcionarios.add(f2);
-        this.funcionarios.add(f3);
-        double result = CalculadoraFolha.calcularFolhaTotal(this.funcionarios, "09/2023");
+        double result = CalculadoraFolha.calcularFolhaTotal(this.funcionarios, "11/2023");
+        assertEquals(expected, result);
+    }
+
+    @Test
+    public void calcularFolhaTotalSemBeneficioTest() {
+        double expected = 39000.00;
+        double result = CalculadoraFolha.calcularFolhaTotalSemBeneficio(this.funcionarios, "11/2023");
+        assertEquals(expected, result);
+    }
+
+    @Test
+    public void obterMaiorSalarioMes() {
+        Funcionario expected = this.funcionarios.get(5);
+        Funcionario result = CalculadoraFolha.obterFuncionarioComMaiorSalarioMes(this.funcionarios, "11/2023");
         assertEquals(expected, result);
     }
     

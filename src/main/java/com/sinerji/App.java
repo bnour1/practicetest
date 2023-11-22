@@ -19,6 +19,5 @@ public final class App {
         HashMap<String, Double> vendas = v.getVendas();
         Double result = vendas.get("11/2023");
         System.out.println(result);
-
     }
 }
