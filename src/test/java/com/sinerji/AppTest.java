@@ -108,7 +108,7 @@ public class AppTest {
     public void obterFuncionarioComMaiorBeneficioMesTest(){
         String expected = this.funcionarios.get(4).getNome();
         seletorFuncionario.setSeletorStrategy(new MaiorBeneficioStrategy());
-        Funcionario result = (Funcionario) seletorFuncionario.selecionar(this.funcionarios, "11/2023");
+        String result = (String) seletorFuncionario.selecionar(this.funcionarios, "11/2023");
         assertEquals(expected, result);
     }
 

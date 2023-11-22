@@ -8,7 +8,7 @@ import com.sinerji.services.strategies.interfaces.Calculadora;
 
 public class TotalSalariosStrategy implements Calculadora {
 
-    public TotalSalariosStrategy(){
+    public TotalSalariosStrategy() {
     }
 
     /*

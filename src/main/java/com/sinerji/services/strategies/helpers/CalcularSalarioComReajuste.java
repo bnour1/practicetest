@@ -2,6 +2,7 @@ package com.sinerji.services.strategies.helpers;
 
 import java.util.Date;
 import com.sinerji.models.Funcionario;
+
 import java.util.Calendar;
 
 public class CalcularSalarioComReajuste {
@@ -18,6 +19,7 @@ public class CalcularSalarioComReajuste {
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(inicio);
 
+        calendar.add(Calendar.YEAR, 1);
         while (calendar.getTime().before(escolhida)) {
             total = total + funcionario.getCargo().getReajuste();
             calendar.add(Calendar.YEAR, 1);
@@ -25,4 +27,5 @@ public class CalcularSalarioComReajuste {
 
         return total;
     }
+
 }
