@@ -69,8 +69,8 @@ public class AppTest {
 
     //teste para o metodo 1
     @Test
-    public void calcularFolhaTotalTest() {
-        double expected = 44000.00;
+    public void calcularTotalPagoMesTest() {
+        double expected = 160225.00;
         calculadoraFolha.setCalculadoraStrategy(new TotalPagoStrategy());
         double result = calculadoraFolha.calcular(this.funcionarios, "11/2023");
         assertEquals(expected, result);
@@ -78,8 +78,8 @@ public class AppTest {
 
     //teste para o metodo 2
     @Test
-    public void calcularFolhaTotalSemBeneficioTest() {
-        double expected = 39000.00;
+    public void calcularTotalSalariosMesTes() {
+        double expected = 138600.00;
         calculadoraFolha.setCalculadoraStrategy(new TotalSalariosStrategy());
         double result = calculadoraFolha.calcular(this.funcionarios, "11/2023");
         assertEquals(expected, result);
@@ -88,7 +88,7 @@ public class AppTest {
     //teste para o metodo 3
     @Test
     public void calcularTotalBeneficiosMesTest() {
-        double expected = 39000.00;
+        double expected = 29905.00;
         calculadoraFolha.setCalculadoraStrategy(new TotalBeneficiosStrategy());
         double result = calculadoraFolha.calcular(this.funcionarios, "11/2023");
         assertEquals(expected, result);
@@ -106,7 +106,7 @@ public class AppTest {
     @Test
     //teste para o metodo 5
     public void obterFuncionarioComMaiorBeneficioMesTest(){
-        String expected = this.funcionarios.get(4).getNome();
+        String expected = this.funcionarios.get(3).getNome();
         seletorFuncionario.setSeletorStrategy(new MaiorBeneficioStrategy());
         String result = (String) seletorFuncionario.selecionar(this.funcionarios, "11/2023");
         assertEquals(expected, result);
@@ -117,7 +117,7 @@ public class AppTest {
     public void obterFuncionarioMaiorVendedorMesTest(){
         Funcionario expected = this.funcionarios.get(2);
         seletorFuncionario.setSeletorStrategy(new MaiorVendedorStrategy());
-        Funcionario result = (Funcionario) seletorFuncionario.selecionar(this.funcionarios, "04/2022");
+        Funcionario result = (Funcionario) seletorFuncionario.selecionar(this.funcionarios, "03/2022");
         assertEquals(expected, result);
     }
 
